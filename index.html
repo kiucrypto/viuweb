@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ViuWeb.com - Premium Domain For Sale | Lenox JG</title>
     <style>
         * {
@@ -11,19 +11,19 @@
             box-sizing: border-box;
         }
 
-        body, html {
-            width: 100%;
-            height: 100%;
-            background-color: #000000;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        body {
+            background-color: #030712;
             color: #ffffff;
-            overflow: hidden;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow-x: hidden;
         }
 
-        .main-container {
+        /* Contenedor principal de pantalla completa */
+        .hero-container {
             position: relative;
             width: 100vw;
             height: 100vh;
@@ -32,100 +32,139 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #0f172a 0%, #000000 80%);
-            padding: 15px;
-            overflow: hidden;
+            background: radial-gradient(circle at center, #0f172a 0%, #000000 85%);
+            padding: 20px;
+            z-index: 1;
         }
 
-        .sparkle {
+        /* Destellos y rayos eléctricos de fondo animados */
+        .electric-glow {
             position: absolute;
-            background: #3b82f6;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #3b82f6, 0 0 20px #60a5fa;
-            animation: floatAndFade 4s infinite ease-in-out;
-            pointer-events: none;
-        }
-
-        @keyframes floatAndFade {
-            0% { transform: translateY(0px) scale(0.5); opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { transform: translateY(-120px) scale(1.2); opacity: 0; }
-        }
-
-        .lightning-pulse {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(125deg, transparent 40%, rgba(59, 130, 246, 0.08) 50%, transparent 60%);
-            animation: flashPulse 3s infinite alternate;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, transparent 50%, rgba(37, 99, 235, 0.05) 100%);
+            animation: pulseGlow 4s ease-in-out infinite alternate;
+            z-index: 2;
             pointer-events: none;
         }
 
-        @keyframes flashPulse {
-            0% { opacity: 0.3; }
-            50% { opacity: 0.9; }
-            100% { opacity: 0.4; }
+        @keyframes pulseGlow {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 0.8; transform: scale(1.05); }
         }
 
-        .content-wrapper {
+        /* Partículas flotantes */
+        .particle {
+            position: absolute;
+            background: #60a5fa;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #3b82f6;
+            animation: floatUp 5s linear infinite;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.3); opacity: 0; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-20vh) scale(1.2); opacity: 0; }
+        }
+
+        /* Contenido de texto principal */
+        .content {
             position: relative;
             z-index: 10;
-            max-width: 700px;
+            max-width: 800px;
             width: 100%;
         }
 
-        .domain-title {
-            font-size: clamp(1.2rem, 3.5vw, 2rem);
+        .domain-name {
+            font-size: clamp(1.2rem, 3vw, 2rem);
             color: #60a5fa;
-            margin-bottom: 0.8rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            letter-spacing: 4px;
             font-weight: 700;
+            margin-bottom: 10px;
             text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
         }
 
-        h1.main-headline {
-            font-size: clamp(2.2rem, 7vw, 4.5rem);
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 900;
-            line-height: 1.1;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 0.5rem;
-            animation: textGlow 2.5s infinite alternate;
+            letter-spacing: 6px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 0 25px rgba(59, 130, 246, 0.8), 0 0 50px rgba(59, 130, 246, 0.4);
+            animation: textFlash 3s ease-in-out infinite alternate;
         }
 
-        @keyframes textGlow {
+        @keyframes textFlash {
             0% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
-            100% { text-shadow: 0 0 35px rgba(96, 165, 250, 1), 0 0 10px rgba(255, 255, 255, 0.8); }
+            100% { text-shadow: 0 0 35px rgba(96, 165, 250, 1), 0 0 15px rgba(255, 255, 255, 0.9); }
         }
 
-        .sub-headline {
-            font-size: clamp(0.9rem, 2vw, 1.3rem);
+        .subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.4rem);
             color: #94a3b8;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 2.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
         }
 
         .owner-tag {
-            font-size: clamp(0.8rem, 1.5vw, 1rem);
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
             color: #38bdf8;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             font-weight: 600;
+            margin-bottom: 2.5rem;
         }
 
-        .contact-button {
+        .contact-btn {
             display: inline-block;
-            padding: 14px 32px;
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            font-weight: 600;
+            padding: 16px 36px;
+            font-size: clamp(0.95rem, 2vw, 1.25rem);
+            font-weight: 700;
             color: #ffffff;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(37, 99, 235, 0.4));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.6));
             border: 2px solid #3b82f6;
             border-radius: 50px;
             text-decoration: none;
-            transition: all 0
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .contact-btn:hover {
+            background: #3b82f6;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.9);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-container">
+        <div class="electric-glow"></div>
+
+        <!-- Partículas de luz animadas -->
+        <div class="particle" style="left: 15%; width: 4px; height: 4px; animation-delay: 0s; animation-duration: 4s;"></div>
+        <div class="particle" style="left: 35%; width: 6px; height: 6px; animation-delay: 1.5s; animation-duration: 5.5s;"></div>
+        <div class="particle" style="left: 60%; width: 3px; height: 3px; animation-delay: 0.8s; animation-duration: 4.2s;"></div>
+        <div class="particle" style="left: 80%; width: 5px; height: 5px; animation-delay: 2.2s; animation-duration: 6s;"></div>
+        <div class="particle" style="left: 90%; width: 4px; height: 4px; animation-delay: 0.5s; animation-duration: 4.8s;"></div>
+
+        <div class="content">
+            <div class="domain-name">viuweb.com</div>
+            <h1>Domain For Sale</h1>
+            <p class="subtitle">Premium Digital Asset Available</p>
+            <div class="owner-tag">Propiedad de Lenox JG</div>
+            <a href="mailto:webdominiosvegas@gmail.com" class="contact-btn">webdominiosvegas@gmail.com</a>
+        </div>
+    </div>
+
+</body>
+</html>
